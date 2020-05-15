@@ -15,7 +15,7 @@ import 'color_utils.dart';
 /// borderSideColor - Border Color
 /// style - Button textstyle
 /// leadingIcon - If you want to display an icon before button text
-/// tailingIcon - If you want to display an icon after button text
+/// trailingIcon - If you want to display an icon after button text
 ButtonTheme raisedButton(
     {VoidCallback onClick,
       String text,
@@ -28,7 +28,7 @@ ButtonTheme raisedButton(
       Color borderSideColor,
       TextStyle style,
       Widget leadingIcon,
-      Widget tailingIcon}) {
+      Widget trailingIcon}) {
   return ButtonTheme(
     minWidth: minWidth,
     height: height,
@@ -55,7 +55,7 @@ ButtonTheme raisedButton(
                 letterSpacing: 1.2,
               ),
             ),
-            _buildTailingIcon(tailingIcon),
+            _buildtrailingIcon(trailingIcon),
           ],
         ),
         onPressed: () {
@@ -73,12 +73,12 @@ Widget _buildLeadingIcon(Widget leadingIcon) {
   return Container();
 }
 
-Widget _buildTailingIcon(Widget tailingIcon) {
-  if (tailingIcon != null) {
+Widget _buildtrailingIcon(Widget trailingIcon) {
+  if (trailingIcon != null) {
     return Row(
       children: <Widget>[
         SizedBox(width: 10),
-        tailingIcon,
+        trailingIcon,
       ],
     );
   }
